@@ -4,16 +4,24 @@ import AuthModal from "../components/AuthModal";
 
 const Home = (props) => {
     const [showModal, setShowModal] = useState(false);
+    const [isSignUp, setIsSignUp] = useState(true);
 
     const authToken = false;
 
     const handleClick = () => {
         setShowModal(true)
+        setIsSignUp(true)
     }
 
     return (
         <div className="overlay">
-            <Nav minimal={false} authToken={authToken} setShowModal={setShowModal} showModal={showModal}/>
+            <Nav 
+                minimal={false} 
+                authToken={authToken} 
+                setShowModal={setShowModal} 
+                showModal={showModal}
+                setIsSignUp={setIsSignUp}
+            />
 
             <div className="home">
                 <h1 className="primary-title">Swipe Right!</h1>
@@ -23,7 +31,7 @@ const Home = (props) => {
 
                 {/* if showModal is true display AuthModal */}
                 {showModal && (
-                    <AuthModal setShowModal={setShowModal}/>
+                    <AuthModal setShowModal={setShowModal} setIsSignUp={setIsSignUp} isSignUp={isSignUp}/>
                 )}
 
             </div>
