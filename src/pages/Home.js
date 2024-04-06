@@ -31,7 +31,7 @@ const Home = (props) => {
 
                 {/* if showModal is true display AuthModal */}
                 {showModal && (
-                    <AuthModal setShowModal={setShowModal} setIsSignUp={setIsSignUp} isSignUp={isSignUp}/>
+                    <AuthModal setShowModal={setShowModal} isSignUp={isSignUp}/>
                 )}
 
             </div>
